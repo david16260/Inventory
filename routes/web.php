@@ -69,6 +69,7 @@ Route::get('/brand/form/{id?}',[BrandController::class, 'form'])->name('brand.fo
 Route::post('/brand/save',[BrandController::class, 'save'])->name('brand.save');
 //ROUTES OF CATEGORY
 use App\Http\Controllers\CategoryController;
+
 Route::get('/category', [CategoryController::class, "show"])->name('category.hi');
 
 Route::get('/category/delete/{id}',[CategoryController::class, 'delete'])->name('productCategory.delete');
@@ -76,3 +77,11 @@ Route::get('/category/delete/{id}',[CategoryController::class, 'delete'])->name(
 Route::get('/category/form/{id?}',[CategoryController::class, 'form'])->name('category.form');
 
 Route::post('/category/save',[CategoryController::class, 'save'])->name('category.save');
+
+// Route::get('/invoice/{id}', function($id){
+//    $invoice= App\Models\Invoice::findOrfail($id);
+//     return dd($invoice);
+// });
+use App\Http\Controllers\InvoiceController;
+Route::get('invoices', [InvoiceController::class , 'show']);
+Route::get('invoice/form', [InvoiceController::class, 'form'])->name('invoice.form');
